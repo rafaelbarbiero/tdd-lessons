@@ -5,12 +5,15 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class CalculadoraDeSalarioTest {
+
     @Test
-    public void deveCalcularSalarioParaDBAsComSalarioAbaixoDoLimite() {
+    public void
+    deveCalcularSalarioParaDesenvolvedoresComSalarioAbaixoDoLimite() {
         CalculadoraDeSalario calculadora = new CalculadoraDeSalario();
         Funcionario desenvolvedor = new Funcionario
-                ("Mauricio", 500.0, Cargo.DBA);
+                ("Mauricio", 1500.0, Cargo.DESENVOLVEDOR);
         double salario = calculadora.calculaSalario(desenvolvedor);
-        assertEquals(500.0 * 0.85, salario, 0.00001);
+        assertEquals(1500.0 * 0.9, salario, 0.00001);
     }
+
 }
