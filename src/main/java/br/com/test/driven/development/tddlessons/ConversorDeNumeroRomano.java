@@ -17,8 +17,13 @@ public class ConversorDeNumeroRomano {
 
     public int converte(String numeroEmRomano) {
         int acumulador = 0;
-        for(int i = 0; i < numeroEmRomano.length(); i++) {
-            acumulador += tabela.get(String.valueOf(numeroEmRomano.charAt(i)));
+        int ultimoVizinhoDaDireita = 0;
+        for (int i = numeroEmRomano.length() - 1; i >= 0; i--) {
+            int atual = tabela.get(String.valueOf(numeroEmRomano.charAt(i)));
+            int multiplicador = 1;
+            if (atual < ultimoVizinhoDaDireita) multiplicador = -1;
+            acumulador += tabela.get(String.valueOf(numeroEmRomano.charAt(i))) * multiplicador;
+            ultimoVizinhoDaDireita = atual;
         }
         return acumulador;
     }
