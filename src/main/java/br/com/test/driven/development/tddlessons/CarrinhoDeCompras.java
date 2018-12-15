@@ -1,17 +1,22 @@
 package br.com.test.driven.development.tddlessons;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class CarrinhoDeCompras {
+    private List<Item> itens;
 
-    private List<Produto> produtos = new ArrayList<>();
-
-    public void adiciona(Produto produto){
-        this.produtos.add(produto);
+    public CarrinhoDeCompras() {
+        this.itens = new ArrayList<Item>();
     }
 
-    public List<Produto> getProdutos() {
-        return this.produtos;
+    public void adiciona(Item item) {
+        this.itens.add(item);
     }
+
+    public List<Item> getItens() {
+        return Collections.unmodifiableList(itens);
+    }
+
 }
