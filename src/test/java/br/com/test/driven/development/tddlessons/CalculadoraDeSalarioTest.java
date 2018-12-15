@@ -6,13 +6,11 @@ import static org.junit.Assert.*;
 
 public class CalculadoraDeSalarioTest {
     @Test
-    public void
-    deveCalcularSalarioParaDesenvolvedoresComSalarioAcimaDoLimite() {
+    public void deveCalcularSalarioParaDBAsComSalarioAbaixoDoLimite() {
         CalculadoraDeSalario calculadora = new CalculadoraDeSalario();
         Funcionario desenvolvedor = new Funcionario
-                ("Mauricio", 4000.0, Cargo.DESENVOLVEDOR);
+                ("Mauricio", 500.0, Cargo.DBA);
         double salario = calculadora.calculaSalario(desenvolvedor);
-        assertEquals(4000.0 * 0.8, salario, 0.00001);
+        assertEquals(500.0 * 0.85, salario, 0.00001);
     }
-
 }
