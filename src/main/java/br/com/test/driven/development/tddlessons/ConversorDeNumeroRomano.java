@@ -16,7 +16,10 @@ public class ConversorDeNumeroRomano {
     }};
 
     public int converte(String numeroEmRomano) {
-        return tabela.get(numeroEmRomano);
+        int acumulador = 0;
+        for(int i = 0; i < numeroEmRomano.length(); i++) {
+            acumulador += tabela.get(String.valueOf(numeroEmRomano.charAt(i)));
+        }
+        return acumulador;
     }
-
 }
