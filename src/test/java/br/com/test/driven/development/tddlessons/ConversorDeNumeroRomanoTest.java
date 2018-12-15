@@ -19,6 +19,4 @@ public class ConversorDeNumeroRomanoTest {
         int numero = romano.converte("V");
         assertEquals(5, numero);
     }
-
-
 }
